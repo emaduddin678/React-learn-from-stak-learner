@@ -1,0 +1,22 @@
+.Root {
+    width: 50%;
+    margin: 20px auto;
+    font-weight: bold;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.Btn {
+    padding: 0 20px;
+    margin: 0 auto;
+    font-size: 20px;
+    color: blueviolet;
+}
+
+.inp {
+    width: 100%;
+    margin: 30px auto;
+    padding: 10px 20px;
+}

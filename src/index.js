@@ -6,7 +6,10 @@ import './components/profile/profile.style.css';
 // import MainApp from './components/mainapp';
 import reportWebVitals from './reportWebVitals';
 // import Count from './components/counter';
-import Timer from './components/timer'
+// import Timer from './components/timer'
+import Event from './components/event-handler/event';
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,7 +18,8 @@ root.render(
     {/* <MainApp /> */}
     {/* <App /> */}
     {/* <Count /> */}
-    <Timer />
+    {/* <Timer /> */}
+    <Event />
     
   </React.StrictMode>
 );

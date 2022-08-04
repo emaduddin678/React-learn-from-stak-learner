@@ -10,6 +10,8 @@ class TimerClock extends Component {
         otherProperties: null
     }
     
+    intervalId = null;
+
     incrementCount = () => {
         this.setState({count: this.state.count + 1})
           
@@ -20,7 +22,31 @@ class TimerClock extends Component {
         }
     }
     startTimer = () => {
-         
+         if(this.state.count > 0 && !this.intervalId) {
+            this.intervalId = setInterval(() => {
+                this.setState({count: this.state.count - 1}, () => {
+                        if(this.state.count === 0) {
+                            alert('Timer Finished');
+                            clearInterval(this.intervalId);
+                            this.intervalId = null;
+                        }
+                    }); 
+            }, 500)
+         } 
+    }
+
+    stopTimer = () => {
+        if(this.intervalId) {
+            clearInterval(this.intervalId);
+            this.intervalId = null;
+        }
+    }
+    restTimer = () => {
+        if(this.intervalId || !this.intervalId) {
+            this.setState({count: 0})
+            clearInterval(this.intervalId);
+            this.intervalId = null;  
+        }
     }
 
     render() {
@@ -34,10 +60,10 @@ class TimerClock extends Component {
                     <button onClick={this.incrementCount}>+</button>
                 </div>
                 <div className={classes.bottom}>
-                    <button>Start</button>
-                    <button>Stop</button>
-                    <button>Reset</button>
-                </div>
+                    <button onClick={this.startTimer}>Start</button>
+                    <button onClick={this.stopTimer}>Stsop</button>
+                    <button onClick={this.restTimer}>Reset</button>
+                </div> 
             </div>
         )
     }
