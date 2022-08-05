@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import classes from './event.module.css';
 
 class Event extends Component {
+
+    state = {
+        name: "Emad"
+    }
     handleButton = (event) => {
         console.log(event.target);
     }
@@ -19,7 +23,11 @@ class Event extends Component {
                     click Me
                 </button>
 
-                <input className={classes.inp} type="text" placeholder="Enter Text" onChange={this.handleChange} />
+                <input 
+                className={classes.inp} type="text" 
+                placeholder="Enter Text" 
+                onChange={this.handleChange} 
+                value= {this.state.name}/>
             
                 
             </div>
