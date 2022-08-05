@@ -5,6 +5,7 @@ import './components/profile/profile.style.css';
 // import App from './components/app';
 // import MainApp from './components/mainapp';
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.css';
 // import Count from './components/counter';
 // import Timer from './components/timer'
 // import Event from './components/event-handler/event';
