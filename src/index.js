@@ -7,8 +7,8 @@ import './components/profile/profile.style.css';
 import reportWebVitals from './reportWebVitals';
 // import Count from './components/counter';
 // import Timer from './components/timer'
-import Event from './components/event-handler/event';
-
+// import Event from './components/event-handler/event';
+import Input from './components/inputs';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,8 +19,9 @@ root.render(
     {/* <App /> */}
     {/* <Count /> */}
     {/* <Timer /> */}
-    <Event />
-    
+    {/* <Event /> */}
+    <Input/> 
+
   </React.StrictMode>
 );
 
