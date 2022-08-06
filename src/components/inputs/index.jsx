@@ -9,7 +9,8 @@ class Input extends Component {
         bio: "",
         birthDay: "",
         gender: "",
-        agree: false
+        agree: false,
+        skills: []
     }
 
     handleChange = event => {
@@ -22,6 +23,14 @@ class Input extends Component {
         this.setState({
             agree: event.target.checked
         })
+    }
+
+    handleSkillChange = event => {
+        if(event.target.checked) {
+            this.setState({
+                skills: [...this.state.skills, event.target.value]
+            })
+        }
     }
 
 
