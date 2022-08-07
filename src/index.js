@@ -9,8 +9,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 // import Count from './components/counter';
 // import Timer from './components/timer'
 // import Event from './components/event-handler/event';
-import Input from './components/inputs';
-
+// import Input from './components/inputs';
+// import UnControledForm from './components/uncontroldedfotm';
+import ControledForm from './components/control-form';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,7 +22,9 @@ root.render(
     {/* <Count /> */}
     {/* <Timer /> */}
     {/* <Event /> */}
-    <Input/> 
+    {/* <Input/>  */}
+    {/* <UnControledForm /> */}
+    <ControledForm />
 
   </React.StrictMode>
 );
