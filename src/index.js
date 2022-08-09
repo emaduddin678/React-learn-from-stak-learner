@@ -11,7 +11,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 // import Event from './components/event-handler/event';
 // import Input from './components/inputs';
 // import UnControledForm from './components/uncontroldedfotm';
-import ControledForm from './components/control-form';
+// import ControledForm from './components/control-form';
+import SplitForm from './components/split-form';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,7 +25,8 @@ root.render(
     {/* <Event /> */}
     {/* <Input/>  */}
     {/* <UnControledForm /> */}
-    <ControledForm />
+    {/* <ControledForm /> */}
+    <SplitForm />
 
   </React.StrictMode>
 );
