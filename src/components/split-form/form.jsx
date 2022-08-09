@@ -12,6 +12,14 @@ const Form = props => (
             value= {props.values.name} 
             onChange= {props.handleChange}
         />
+        {/* <input
+            name={props.name}  
+            type={props.type} 
+            placeholder={props.placeholder} 
+            id={props.name} 
+            value={props.value} 
+            onChange={props.onChange}
+        /> */}
         <TextInput 
             name="email" 
             type="email" 
