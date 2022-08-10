@@ -1,5 +1,5 @@
 import React from "react";
-
+import Form from "./form";
 
 
 const initValues = {
@@ -43,6 +43,13 @@ class SignupForm extends  React.Component {
         return (
             <div>
                 <h1>Signup Form</h1>
+                <Form 
+                    values={this.state.values} 
+                    agreement={this.state.agreement} 
+                    handleChange={this.handleChange}
+                    handleAgreement={this.handleAgreement}
+                    handleSubmit={this.handleSubmit}
+                />
             </div>
         )
     }

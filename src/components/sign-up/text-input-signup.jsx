@@ -2,10 +2,10 @@ import React from "react";
 import PropTypes from 'prop-types';
 
 const TextInputForSignUp = props => (
-    <div className="form-group">
-        <label htmlFor={props.name}>{props.label}</label>
+    <div className="form-group " >
+        <label htmlFor={props.name} className="ms-3">{props.label}</label>
         <input 
-            className="form-control my-3" 
+            className="form-control mb-3" 
             type={props.type} 
             name={props.name} 
             id={props.name} 

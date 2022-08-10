@@ -14,7 +14,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 // import ControledForm from './components/control-form';
 // import SplitForm from './components/split-form';
 import SignupForm from './components/sign-up';
-
+import Test from './components/button/button';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -30,7 +30,8 @@ root.render(
     {/* <UnControledForm /> */}
     {/* <ControledForm /> */}
     {/* <SplitForm /> */}
-    <SignupForm />
+    {/* <SignupForm /> */}
+    <Test />
 
   </React.StrictMode>
 );
