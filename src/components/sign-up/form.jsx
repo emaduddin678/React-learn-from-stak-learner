@@ -7,8 +7,9 @@ const Form = ({
   values,
   handleChange,
   agreement,
+  errors,
   handleAgreement,
-  handleSubmit
+  handleSubmit,
 }) => {
   return (
     <form onSubmit={handleSubmit} className="p-5">
@@ -16,6 +17,7 @@ const Form = ({
         name="name"
         label="Name"
         placeholder="Enter name"
+        error={errors.name}
         value={values.name}
         onChange={handleChange}
       />
@@ -23,6 +25,7 @@ const Form = ({
         name="email"
         type="email"
         label="Email"
+        error={errors.email}
         placeholder="Enter email"
         value={values.email}
         onChange={handleChange}
@@ -31,6 +34,7 @@ const Form = ({
         name="password"
         type="password"
         label="Password"
+        error={errors.password}
         placeholder="Enter password"
         value={values.password}
         onChange={handleChange}
@@ -39,11 +43,12 @@ const Form = ({
         name="birthDate"
         type="date"
         label="BirthDate"
+        error={errors.birthDate}
         placeholder="Eneter BirthDate"
         value={values.birthDate}
         onChange={handleChange}
       />
-      <Radio onChange={handleChange} />
+      <Radio onChange={handleChange} error={errors.gender} />
       <div className="form-group my-2">
         <label>
           <input
@@ -66,6 +71,7 @@ const Form = ({
 Form.propTypes = {
   values: PropTypes.object.isRequired,
   agreement: PropTypes.bool.isRequired,
+  errors: PropTypes.object.isRequired,
   handleChange: PropTypes.func.isRequired,
   handleAgreement: PropTypes.func.isRequired,
   handleSubmit: PropTypes.func.isRequired,
