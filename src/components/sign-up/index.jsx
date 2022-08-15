@@ -1,7 +1,6 @@
 import React from "react";
 import Form from "./form";
 
-
 const initValues = {
   name: "",
   email: "",
@@ -14,7 +13,7 @@ class SignupForm extends React.Component {
   state = {
     values: initValues,
     agreement: false,
-    errors: {}
+    errors: {},
   };
 
   handleChange = (event) => {
@@ -33,18 +32,26 @@ class SignupForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const {errors, isValid } = this.validate();
 
+
+    // console.log(isValid)
+    const { errorsMsg, isValid } = this.validate();
+    console.log(isValid)
     if(isValid) {
+      // console.log(!isValid);
       console.log(this.state.values);
+      console.log(errorsMsg)
       event.target.reset();
-      this.setState({ values: initValues, agreement: false , errors:{}});
+      this.setState({ values: initValues, agreement: false, errors: {} });
     } else{
       this.setState({
-        errors: errors
-      })
+        errors: errorsMsg,
+      });
+      console.log(this.state);
+      console.log(this.state.values);
+      console.log(this.state.errors);
+      console.log(errorsMsg);
     }
-
 
     // console.log(this.state.values);
     // event.target.reset();
@@ -52,31 +59,31 @@ class SignupForm extends React.Component {
   };
 
   validate = () => {
-    const errors = {}
-    const {values: {name, email, password, birthDate, gender}} = this.state;
-    errors.msg = "I am error Object";
-    if(!name) {
-      errors.name = "Please provide your name";
+    const errorsMsg = {};
+    const {
+      values: { name, email, password, birthDate, gender },
+    } = this.state;
+    // errors.msg = "I am error Object";
+    if (!name) {
+      errorsMsg.name = "Please provide your name";
     }
-    if(!email) {
-      errors.email= "Please provide your Email";
+    if (!email) {
+      errorsMsg.email = "Please provide your Email";
     }
-    if(!password) {
-      errors.password= "Please provide your Password";
+    if (!password) {
+      errorsMsg.password = "Please provide your Password";
     }
-    if(!birthDate) {
-      errors.birthDate= "Please provide your birthDate";
+    if (!birthDate) {
+      errorsMsg.birthDate = "Please provide your birthDate";
     }
-    if(!gender) {
-      errors.gender = "Are you gay?"
+    if (!gender) {
+      errorsMsg.gender = "Are you gay?";
     }
     return {
-      errors,
-      isValid: Object.keys(errors).length === 0
-    }
-
-  }
-
+      errorsMsg,
+      isValid: Object.keys(errorsMsg).length === 0
+    };
+  };
 
   render() {
     return (
@@ -85,7 +92,7 @@ class SignupForm extends React.Component {
         <Form
           values={this.state.values}
           agreement={this.state.agreement}
-          errors= {this.state.errors}
+          errors={this.state.errors}
           handleChange={this.handleChange}
           handleAgreement={this.handleAgreement}
           handleSubmit={this.handleSubmit}
