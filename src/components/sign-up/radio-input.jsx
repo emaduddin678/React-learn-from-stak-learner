@@ -18,8 +18,7 @@ const RadioInput = (props) => (
 
 RadioInput.propTypes = {
   value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  error: PropTypes.string,
+  onChange: PropTypes.func.isRequired
 };
 
 export default RadioInput;

@@ -1,5 +1,6 @@
 import React from "react";
 import Form from "./form";
+import PropTypes from "prop-types";
 
 const initValues = {
   name: "",
@@ -32,25 +33,22 @@ class SignupForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-
-
-    // console.log(isValid)
     const { errorsMsg, isValid } = this.validate();
-    console.log(isValid)
-    if(isValid) {
-      // console.log(!isValid);
+
+    if (isValid) {
+      this.props.createUser(this.state.values);
       console.log(this.state.values);
-      console.log(errorsMsg)
+      // console.log(errorsMsg);
       event.target.reset();
       this.setState({ values: initValues, agreement: false, errors: {} });
-    } else{
+    } else {
       this.setState({
         errors: errorsMsg,
       });
       console.log(this.state);
-      console.log(this.state.values);
+      // console.log(this.state.values);
       console.log(this.state.errors);
-      console.log(errorsMsg);
+      // console.log(errorsMsg);
     }
 
     // console.log(this.state.values);
@@ -81,13 +79,13 @@ class SignupForm extends React.Component {
     }
     return {
       errorsMsg,
-      isValid: Object.keys(errorsMsg).length === 0
+      isValid: Object.keys(errorsMsg).length === 0,
     };
   };
 
   render() {
     return (
-      <div className="p-5">
+      <div>
         <h1>Signup Form</h1>
         <Form
           values={this.state.values}
@@ -101,5 +99,9 @@ class SignupForm extends React.Component {
     );
   }
 }
+
+SignupForm.propTypes = {
+  createUser: PropTypes.func.isRequired,
+};
 
 export default SignupForm;

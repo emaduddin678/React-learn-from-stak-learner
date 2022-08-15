@@ -9,22 +9,22 @@ const Radio = (props) => (
       label="Male"
       value="Male"
       onChange={props.onChange}
-      // error2={props.error}
     />
     <RadioInput
       label="Female"
       value="Female"
       onChange={props.onChange}
-      // error2={props.error}
     />
     <RadioInput
       label="Other"
       value="Other"
       onChange={props.onChange}
-      // error2={props.error}
     />
-    {props.error && <h1 className="invalid-feedback d-block ms-4">{props.error + "   If not, please provide your gender"}</h1> }
-    
+    {props.error && (
+      <h1 className="invalid-feedback d-block ms-4">
+        {props.error + "   If not, please provide your gender"}
+      </h1>
+    )}
   </div>
 );
 

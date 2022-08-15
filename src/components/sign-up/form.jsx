@@ -48,7 +48,7 @@ const Form = ({
         value={values.birthDate}
         onChange={handleChange}
       />
-      <Radio onChange={handleChange} error={errors.gender} />
+      <Radio onChange={handleChange} error={errors.gender}  />
       <div className="form-group my-2">
         <label>
           <input
